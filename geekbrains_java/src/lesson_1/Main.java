@@ -18,55 +18,47 @@ public class Main {
         //ссылочные типы данныых
         String str = "Hello!";
 
-        System.out.println(mathFormula(2, 3, 20, 5));
+        System.out.println(mathFormula(10, 3, 20, 5));
 
-        int summ = summTwoNumber(2, 3);
-        System.out.println(summ >= 10 && summ <= 20 ? true : false);
+        System.out.println(summTwoNumber(10, 3));
 
-        int a = numberSign(-7);
+        numberSign(-7);
 
+        System.out.println(signNumber(-5));
 
-        int b = signNumber(-5);
+        nameUser("Анна");
 
-
-        String c = nameUser("Анна");
-
-
-        int year = leapYear(2000);
-
+        leapYear(2000);
     }
 
     static int mathFormula(int a, int b, int c, int d) {
         return a * (b + (c / d));
-    }
-
-    static int summTwoNumber(int a, int b) {
-        return a + b;
-    }
-
-    static int numberSign(int a) {
-        System.out.println(a < 0 ? "Отрицательное число" : "Положительное число");
-        return a;
-
-    }
-
-    static int signNumber(int b) {
-        System.out.println(b < 0 ? true : false);
-        return b;
-    }
-
-    static String nameUser(String c) {
-        System.out.println("Привет, " + c + "!");
-        return c;
-    }
-
-    static int leapYear(int year) {
-        if (year % 4 == 0 && year % 100 != 0 || year % 400 == 0) {
-            System.out.println(year + "- високосный год");
-        } else {
-            System.out.println(year + " - невисокосный год");
         }
-        return year;
+
+    static boolean summTwoNumber(int a, int b) {
+        if(a+b >= 10 && a+b <= 20)
+             return true;
+        else
+            return false;
+    }
+
+    static void numberSign(int a) {
+        System.out.println(a < 0 ? "Отрицательное число" : "Положительное число");
+    }
+
+    static boolean signNumber(int b) {
+        if(b < 0)
+            return true;
+        else
+            return false;
+    }
+
+    static void  nameUser(String c) {
+        System.out.println("Привет, " + c + "!");
+    }
+
+    static void leapYear(int year) {
+        System.out.println(year % 4 == 0 && year % 100 != 0 || year % 400 == 0 ? year + "- високосный год": year + " - невисокосный год");
     }
 }
 
